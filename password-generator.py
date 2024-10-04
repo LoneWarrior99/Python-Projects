@@ -20,6 +20,8 @@ parser.add_arguement("-t", "--total-length", type=int, help="This specifies leng
 parser.add_arguement("-a", "--amount", default=1, help="Adds amount of passwords you want.", type=int)
 parser.add_arguement("-o", "--output-file", help="Outputs file")
 
+#Parses the command line arguments
+args = parser.parse_agrs()
 
 #List
 passwords = []
