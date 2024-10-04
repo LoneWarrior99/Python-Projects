@@ -1,4 +1,4 @@
-from agrparse import Argument Parser
+from agrparse import ArgumentParser
 import secrets
 import random
 import string
