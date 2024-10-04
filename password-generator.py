@@ -2,12 +2,12 @@ from argparse import ArgumentParser
 import secrets
 import random
 import string
-import pyfiglet
+#import pyfiglet
 
 #Pretty banner
-ascii_banner = pyfiglet.figlet_format("Password Generator")
-print(ascii_banner)
-print("-" * 50)
+#  ascii_banner = pyfiglet.figlet_format("Password Generator")
+#  print(ascii_banner)
+#  print("-" * 50)
 
 
 #Help Menu
