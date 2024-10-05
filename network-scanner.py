@@ -1,5 +1,14 @@
 from scapy.all import ARP, Ether, srp
 from argparse import ArgumentParser
+import pyfiglet
+from datetime import datetime
+
+
+#pretty title
+ascii_banner = pyfiglet.figlet_format("arp network scanner")
+print(ascii_banner)
+
+
 
 parser = ArgumentParser(
   prog='Network Scanner',
@@ -15,6 +24,13 @@ args = parser.parse_args()
 
 #Change target to IP you want to scan
 target_ip = args.target
+
+#Banner 
+print("_" *50)
+print("Scanning Targets: " + target_ip)
+print("Scanning started at: " + str(datetime.now()))
+print("_" *50)
+
 
 #Create arp packet
 arp = ARP(pdst=target_ip)
@@ -32,6 +48,8 @@ clients = []
 for sent, received in result:
   #for each respond, append ip and mac to clients list
   clients.append({'ip': received.psrc, 'mac': received.hwsrc})
+
+
 
 #prints clients
 print("Available devices in the network:")
