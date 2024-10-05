@@ -2,8 +2,8 @@ from scapy.all import ARP, Ether, srp
 from argparse import ArgumentParser
 
 parser = ArgumentParser(
-  prog='Network Scanner'
-  description='This is a basic network scanner using arp requests'
+  prog='Network Scanner',
+  description='This is a basic network scanner using arp requests',
   epilog='Thanks for looking!'
 )
 
