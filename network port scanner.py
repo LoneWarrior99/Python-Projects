@@ -87,9 +87,9 @@ result = srp(packet, timeout=3, verbose=0)[0]
 #list of clients
 clients = []
 
-for sent, recieved in result:
+for sent, received in result:
   #for each respond, append ip and mac to clients list
-  clients.append({ 'ip': received.psrc, 'mac': recieved.hwsrc})
+  clients.append({ 'ip': received.psrc, 'mac': received.hwsrc})
 
 #prints clients
 print("Available devices in the network:")
