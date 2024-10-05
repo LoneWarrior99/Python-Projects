@@ -1,6 +1,5 @@
 These are cyber security focused python projects and are intended for my own legal ethical educational purposes only. 
 
-I've created these files using guides online and do not claim the source code to be my own. I only intend to learn, break, and add to them to further my own skillset 
 
 
 
