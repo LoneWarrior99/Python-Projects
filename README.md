@@ -12,7 +12,7 @@ https://www.youtube.com/watch?v=824JGqsYNtA
 https://thepythoncode.com/article/make-a-password-generator-in-python
 
 
-### Network Scanner:
+### Arp Scanner:
 
 https://www.youtube.com/watch?v=zsG68FLm3Xs&t=628s
 
@@ -28,4 +28,8 @@ https://thepythoncode.com/article/make-port-scanner-python
 
 
 
-### DHCP Listener / Geolocator for IP addresses:
+### Network Scanner:
+
+https://www.youtube.com/watch?v=_IgCcTQ9JYw&t=6s
+
+
