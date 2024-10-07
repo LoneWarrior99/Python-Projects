@@ -3,6 +3,8 @@ These are cyber security focused python projects and are intended for my own leg
 
 
 
+
+
 Here are the sources and guides I followed:
 
 ### Password Generator:
@@ -34,4 +36,17 @@ https://www.youtube.com/watch?v=_IgCcTQ9JYw&t=6s
 
 
 ### Password Cracker:
+
 https://www.youtube.com/watch?v=eHwFPmQf3BA&pp=ygUWc3R1ZmZ5MjQgY2hhbGxlbmdlcyAxMA%3D%3D
+
+
+### Metadata Extract:
+
+https://www.youtube.com/watch?v=TSQJc1LeYQg&t=12s
+https://github.com/stuffy24/Metadata_exfil
+
+
+### Metadata Extract:
+
+
+
