@@ -142,7 +142,7 @@ if answer == "1":
 
   main(host, ports)
 
-  print("Scan Complete")
+  print("Scan Completed")
 
 else:
   print("Goodbye!")
