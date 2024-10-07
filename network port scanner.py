@@ -3,6 +3,15 @@ from argparse import ArgumentParser
 import socket
 from queue import Queue
 from threading import Thread, Lock
+import pyfiglet
+from datetime import datetime
+
+
+#pretty title
+ascii_banner = pyfiglet.figlet_format("NETWORK-PORT SCANNER")
+print(ascii_banner)
+
+
 
 #Change to increase or decrease speed
 N_THREADS = 200
@@ -37,9 +46,9 @@ def scan_thread():
   global q
   while True:
     #get the port number from the queue
-    worker = q.qet()
+    worker = q.get()
     #scan port number
-    open_port(worker)
+    open_ports(worker)
     #tells it when finished
     q.task_done()
 
@@ -60,36 +69,51 @@ def main (hosts, ports):
 
 
 parser = ArgumentParser(
-  prog='Network Port Scanner'
-  description='This is a basic network scanner using arp requests'
+  prog='Network Port Scanner',
+  description='This is a basic network scanner using arp requests',
   epilog='Thanks for looking!'
 )
 
 #set up help menu
 parser.add_argument('-t', "--target", help="Use the syntax -t to specify your target. Must be in CIDR Notation", required=True)
 
+
 #pareses command line arguements
 args = parser.parse_args()
+
 
 #Change target to IP you want to scan
 target_ip = args.target
 
+
+#Banner 
+print("_" *50)
+print("Scanning Targets: " + target_ip)
+print("Scanning started at: " + str(datetime.now()))
+print("_" *50)
+
+
 #Create arp packet
 arp = ARP(pdst=target_ip)
+
 
 #Create ether broadcast packet
 ether = Ether(dst='ff:ff:ff:ff:ff:ff')
 packet = ether/arp
 #This stacks them
 
+
 result = srp(packet, timeout=3, verbose=0)[0]
+
 
 #list of clients
 clients = []
 
+
 for sent, received in result:
   #for each respond, append ip and mac to clients list
   clients.append({ 'ip': received.psrc, 'mac': received.hwsrc})
+
 
 #prints clients
 print("Available devices in the network:")
@@ -97,10 +121,13 @@ print("IP" + " "*18+"MAC")
 for client in clients:
   print("{:16}    {}".format(client['ip'], client['mac']))
 
+
 print("What now?")
 print("1.Port Scan")
 
+
 answer = input("Enter number\n")
+
 
 if answer == "1":
   host = input("Enter the host:")
@@ -108,7 +135,7 @@ if answer == "1":
   ports = input("Enter the ports/range:")
   host, port_range = host,ports
 
-  start_port, end_port = port_ranges.split("-")
+  start_port, end_port = port_range.split("-")
   start_port, end_port = int(start_port),int(end_port)
 
   ports = [ p for p in range(start_port, end_port)]
