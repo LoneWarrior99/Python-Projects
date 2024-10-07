@@ -15,8 +15,8 @@ parser = ArgumentParser(
 )
 
 #set up help menu
-parser.add_argument('-w', "--wordlist", help="Use the syntax -w to specify what wordlist you want to use")
-parser.add_argument('-p', "--passwordhash", help="Puth the hash here with -p to specify which hash you want to crack.")
+parser.add_argument('-w', "--wordlist", required=True, help="Use the syntax -w to specify what wordlist you want to use")
+parser.add_argument('-p', "--passwordhash", required=True, help="Put the hash here with -p to specify which hash you want to crack.")
 
 
 #pareses command line arguements
@@ -26,17 +26,21 @@ wordlist = args.wordlist
 def readwordlist():
   try:
     with open(wordlist, "r") as wordlist_file:
-      words = (line.strip() for line in wordlist_file)
+      words = [line.strip() for line in wordlist_file]
+  except FileNotFoundError:
+    print("Error: The specified wordlist file was not found.")
+    exit()
   except Exception as e:
     print("There was an error:", e)
+    exit()
   return words
 
-def hash(wordlistpassword):
+def hash_password(wordlistpassword):
   result = hashlib.sha1(wordlistpassword.encode())
   #Can change sha1 to other methods
   return result.hexdigest()
 
-def bruteforcewords(words, actual_password_hash):
+def bruteforce(words, actual_password_hash):
   for guess_password in words:
     stripped_guess_password = guess_password.strip()
     if hash(stripped_guess_password) == actual_password_hash:
@@ -52,7 +56,7 @@ words = readwordlist()
 actual_password_hash = args.passwordhash
 
 #Running the Brute Force attack
-bruteforce(words, actual_passwword_hash)
+bruteforce(words, actual_password_hash)
 
 #It would be executed if your password was not in the wordlist
-print("Unable to find password, not in wordlist."
+print("Unable to find password, not in wordlist.")
