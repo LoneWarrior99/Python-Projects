@@ -33,3 +33,5 @@ https://thepythoncode.com/article/make-port-scanner-python
 https://www.youtube.com/watch?v=_IgCcTQ9JYw&t=6s
 
 
+### Password Cracker:
+https://www.youtube.com/watch?v=eHwFPmQf3BA&pp=ygUWc3R1ZmZ5MjQgY2hhbGxlbmdlcyAxMA%3D%3D
