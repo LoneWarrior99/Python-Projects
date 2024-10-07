@@ -43,6 +43,7 @@ https://www.youtube.com/watch?v=eHwFPmQf3BA&pp=ygUWc3R1ZmZ5MjQgY2hhbGxlbmdlcyAxM
 ### Metadata Extract:
 
 https://www.youtube.com/watch?v=TSQJc1LeYQg&t=12s
+
 https://github.com/stuffy24/Metadata_exfil
 
 
