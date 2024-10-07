@@ -46,7 +46,6 @@ https://www.youtube.com/watch?v=TSQJc1LeYQg&t=12s
 https://github.com/stuffy24/Metadata_exfil
 
 
-### Metadata Extract:
 
 
 
