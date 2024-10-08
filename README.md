@@ -44,6 +44,8 @@ https://www.youtube.com/watch?v=_IgCcTQ9JYw&t=6s
 
 ### Password Cracker:
 
+This is a password cracker that uses a wordlist.
+
 https://www.youtube.com/watch?v=eHwFPmQf3BA&pp=ygUWc3R1ZmZ5MjQgY2hhbGxlbmdlcyAxMA%3D%3D
 
 ---
