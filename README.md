@@ -1,11 +1,8 @@
 These are cyber security focused python projects and are intended for my own legal ethical educational purposes only. 
 
 
+Here are the sources and guides I followed with a brief description:
 
-
-
-
-Here are the sources and guides I followed:
 ---
 ### Password Generator:
 
